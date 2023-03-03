@@ -13,7 +13,7 @@
 header{
     color: white;
     position: relative;
-    right: -20%;
+    right: -3%;
     font-size: 70px;
 }
 
@@ -33,7 +33,7 @@ body{
     background-color: rgb(130, 117, 117);
 }
 
-#answersContainer{
+#answerContainer{
     position: relative;
     margin-top: 20%;
     background-color: #555;

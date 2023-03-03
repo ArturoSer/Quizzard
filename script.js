@@ -1,21 +1,24 @@
 var questions = [
     {
         question: "What makes the page interactive?",
-        answersA: "html",
-        answersB: "CSS",
-        answersC: "Javascript"
+        answerA: "html",
+        answerB: "CSS",
+        answerC: "Javascript",
+        answer: "CSS"
     },
     {
         question: "What makes a display message pop up when something bad happens?",
-        answersA: "Prompt()",
-        answersB: "Alert()",
-        answersC: "Message()"
+        answerA: "Prompt()",
+        answerB: "Alert()",
+        answerC: "Message()",
+        answer: "Alert()"
     },
     {
         question: "what holds user information in the DevTools?",
-        answersA: "Local storage",
-        answersB: "data attributes",
-        answersC: "DOM"
+        answerA: "Local storage",
+        answerB: "data attributes",
+        answerC: "DOM",
+        answer: "local storage"
     }
 ]
 
@@ -34,22 +37,22 @@ function random(array) {
 var randomArray = random(questions)
 
 var questionEle = document.querySelector('.questionContainer')
-var answersAEle = document.querySelector('.answers1')
-var answersBEle = document.querySelector('.answers2')
-var answersCEle = document.querySelector('.answers3')
-var answersOptions = document.querySelector('.answersOptions')
+var answerAEle = document.querySelector('.answer1')
+var answerBEle = document.querySelector('.answer2')
+var answerCEle = document.querySelector('.answer3')
+var answerOptions = document.querySelector('.answerOptions')
 
 var index = 0
 
 questionEle.textContent = randomArray[0].question
-answersAEle.textContent = randomArray[0].answersA
-answersBEle.textContent = randomArray[0].answersB
-answersCEle.textContent = randomArray[0].answersC
+answerAEle.textContent = randomArray[0].answerA
+answerBEle.textContent = randomArray[0].answerB
+answerCEle.textContent = randomArray[0].answerC
 
 var score = 0
 
 function button1(){
-    if(answersAEle.textContent === questions[index].answers){
+    if(answerAEle.textContent === questions[index].answer){
         score += 1
     } else {
     }
@@ -57,7 +60,7 @@ function button1(){
 }
 
 function button2(){
-    if(answersBEle.textContent === questions[index].answers){
+    if(answerBEle.textContent === questions[index].answer){
         score += 1
     } else {
     }
@@ -65,14 +68,14 @@ function button2(){
 }
 
 function button3(){
-    if(answersCEle.textContent === questions[index].answers){
+    if(answerCEle.textContent === questions[index].answer){
         score += 1
     } else {
     }
     addIndexNumber()
 }
 
-answersOptions.addEventListener('click', function(event) {
+answerOptions.addEventListener('click', function(event) {
     var element =  event.target;
     if(element.matches('button')) {
         if(element.textContent === questions[index].answer){
@@ -88,7 +91,7 @@ answersOptions.addEventListener('click', function(event) {
 var scoreEle = document.querySelector('.score')
 
 function showQuizFinalScreen(){
-    document.getElementById('answersContainer').style.display = 'none';
+    document.getElementById('answerContainer').style.display = 'none';
     document.getElementById('userScore').style.display = 'flex';
     scoreEle.textContent = score
 }
@@ -96,9 +99,9 @@ function showQuizFinalScreen(){
 function displayQuestions() {
     if (index <= randomArray.length -1) {
         questionEle.textContent = randomArray[index].question
-        answersAEle.textContent = randomArray[index].answersA
-        answersBEle.textContent = randomArray[index].answersB
-        answersCEle.textContent = randomArray[index].answersC
+        answerAEle.textContent = randomArray[index].answerA
+        answerBEle.textContent = randomArray[index].answerB
+        answerCEle.textContent = randomArray[index].answerC
     } else {
         showQuizFinalScreen()
     }
