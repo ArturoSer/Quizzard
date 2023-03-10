@@ -2,30 +2,45 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="../Quizzard/assets/style.css">
         <title>Quizzard</title>
         </head>
-        <header>Code Quizzzzz</header>
+       <body>
+        <header class="header"> 
+            <h1>Quizzard</h1>
+        </header>
 
-        <body>
-            <div id="answerContainer">
-                <div>
-                    <h1 class="questionContainer"></h1>
+        <main>
+            <div class="container">
+                <h2 id="timer"></h2>
+                <h2 id="questionText"></h2>
+                <p id="introText">
+                    Ready for a super awesome test? YOU GOT 60 SECONDS TO ANSWER THE QUESTIONS!
+                </p>
+                <button id="startQuiz">Start Quiz</button>
+                <div id="intials"></div>
+                <div class="answerButtons">
+                    <button class="full-width" id="answer-one"></button>
+                    <button class="full-width" id="answer-two"></button>
+                    <button class="full-width" id="answer-three"></button>
                 </div>
-                <div class="answerOptions">
-                    <button id=button class="answer1" data-index="1"></button>
-                    <button id=button class="answer2" data-index="2"></button>
-                    <button id=button class="answer3" data-index="3"></button>
-                    <h2 class="timer"></h2>
+                <div class="highscores">
+                    <h2 id="finishedMessage"></h2>
+                    <p id="scoreText"></p>
+                    <div id="scoreMessage"></div>
+                    <form id="initials-form">
+                        <input type="text"
+                        id="initials-input"
+                        name="initials-input"
+                        placeholder="Enter Initials"/>
+                        <button class="initials-submit">Submit</button>
+                    </form>
+                    <ul id="leaderboard-list"></ul>
+                    <button id="restartQuiz">Play Again :)?</button>
                 </div>
             </div>
-            <div id="userScore">
-                <h2 class="yourScore">Your Score: </h1>
-                <h2 class="score"></h1>
-                <h2 class="fraction">/3</h1>
-            </div>
-            <script src="./script.js"></script>
-        </body>
+        </main>
+        <script src="../Quizzard/assets/script.js"></script>
+       </body>
 </html>
